@@ -27,10 +27,22 @@ function JumpPoints.main( frame )
             if exitObject.code == object.code then exitObject = object.tunnel.entry end
 
             wikitable = wikitable .. '|-\n' ..
+                -- From this system
                 '|[[' .. stringUtil.clean( stringUtil.removeParentheses( object.designation ) ) .. ']]\n' ..
+                -- Direction
                 '|' .. t( 'val_direction_' .. string.lower( object.tunnel.direction ) ) .. '\n' ..
+                -- Size
                 '|' .. t( 'val_size_' .. string.lower( object.tunnel.size ) ) .. '\n' ..
-                '|[[' .. stringUtil.clean( stringUtil.removeParentheses( exitObject.designation ) ) .. ']]\n'
+                -- Path to target system's gate
+                '|[[' ..
+                stringUtil.clean( stringUtil.removeParentheses( exitObject.designation ) ) ..
+                ']], ' ..
+                stringUtil.lowerFirst(
+                    stringUtil.clean(
+                        Starmap.pathTo( Starmap.findStructure( 'object', exitObject.code ) )
+                    )
+                ) ..
+                '\n'
         end
     end
 
