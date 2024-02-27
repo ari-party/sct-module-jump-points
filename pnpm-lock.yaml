@@ -1,0 +1,52 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  scribunto-bundler:
+    specifier: ^0.2.1
+    version: 0.2.1
+
+packages:
+
+  /2dec@1.0.5:
+    resolution: {integrity: sha512-vvSukjA2zR2eTRy/TqpIliCS9GccGPEGPgRLl+JXr3XvH2lzTwNW4jO4GAjnv+F22wK0cCiD7nZ4pX0pvHd1jg==}
+    dev: false
+
+  /@robertsspaceindustries/sub@1.0.8:
+    resolution: {integrity: sha512-xXr+r4rxnq9zt2+HnWVxGZzx9x+2v0KHr3Mvu3dlI57Ygx+HYYNSbB7+bwQQwKZo472ZEbWec8W48zvK4jlJfA==}
+    dev: false
+
+  /commander@11.1.0:
+    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
+    engines: {node: '>=16'}
+    dev: false
+
+  /klaw@4.1.0:
+    resolution: {integrity: sha512-1zGZ9MF9H22UnkpVeuaGKOjfA2t6WrfdrJmGjy16ykcjnKQDmHVX+KI477rpbGevz/5FD4MC3xf1oxylBgcaQw==}
+    engines: {node: '>=14.14.0'}
+    dev: false
+
+  /nanoid@5.0.5:
+    resolution: {integrity: sha512-/Veqm+QKsyMY3kqi4faWplnY1u+VuKO3dD2binyPIybP31DRO29bPF+1mszgLnrR2KqSLceFLBNw0zmvDzN1QQ==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    dev: false
+
+  /picocolors@1.0.0:
+    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+    dev: false
+
+  /scribunto-bundler@0.2.1:
+    resolution: {integrity: sha512-JDz9OYRjcJTIiJa2hOIYaY5im3W4lcDkoozUfLdfWGhXzFy0pOZViOwEv6jnFUL9OYPmn9uCjmasKSB3JjHhBw==}
+    hasBin: true
+    dependencies:
+      2dec: 1.0.5
+      '@robertsspaceindustries/sub': 1.0.8
+      commander: 11.1.0
+      klaw: 4.1.0
+      nanoid: 5.0.5
+      picocolors: 1.0.0
+    dev: false

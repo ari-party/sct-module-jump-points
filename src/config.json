@@ -1,0 +1,4 @@
+{
+  "%module_lang": "Set the language of the module, if set to 'null' the content language of the wiki will be used.",
+  "module_lang": null
+}

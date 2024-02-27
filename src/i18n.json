@@ -1,0 +1,104 @@
+{
+  "schema": {
+    "fields": [
+      {
+        "type": "string",
+        "name": "id"
+      },
+      {
+        "type": "localized",
+        "name": "message"
+      }
+    ]
+  },
+  "license": "CC0-1.0",
+  "description": {
+    "en": "Translation table"
+  },
+  "data": [
+    [
+      "error_invalid_args",
+      {
+        "en": "Invalid or missing parameters.",
+        "de": "Ungültige oder fehlende Parameter."
+      }
+    ],
+    [
+      "error_no_data",
+      {
+        "en": "Data was unable to be retrieved.",
+        "de": "Daten konnten nicht abgerufen werden."
+      }
+    ],
+    [
+      "lbl_jumpgate",
+      {
+        "en": "Jump gate",
+        "de": "Sprungtor"
+      }
+    ],
+    [
+      "lbl_direction",
+      {
+        "en": "Direction",
+        "de": "Richtung"
+      }
+    ],
+    [
+      "lbl_destination",
+      {
+        "en": "Destination",
+        "de": "Ziel"
+      }
+    ],
+    [
+      "lbl_size",
+      {
+        "en": "Size",
+        "de": "Größe"
+      }
+    ],
+    [
+      "lbl_type",
+      {
+        "en": "Type",
+        "de": "Typ"
+      }
+    ],
+    [
+      "val_direction_b",
+      {
+        "en": "Bidirectional",
+        "de": "Bidirektional"
+      }
+    ],
+    [
+      "val_direction_u",
+      {
+        "en": "Unidirectional",
+        "de": "Unidirektional"
+      }
+    ],
+    [
+      "val_size_l",
+      {
+        "en": "Large",
+        "de": "Groß"
+      }
+    ],
+    [
+      "val_size_m",
+      {
+        "en": "Medium",
+        "de": "Mittel"
+      }
+    ],
+    [
+      "val_size_s",
+      {
+        "en": "Small",
+        "de": "Klein"
+      }
+    ]
+  ]
+}
