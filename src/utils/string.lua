@@ -4,13 +4,6 @@ local StringUtil = {
     removeParentheses = Common.removeParentheses
 }
 
---- Remove parentheses and their content
----@param inputString string
----@return string
-function StringUtil.removeParentheses( inputString )
-    return string.match( string.gsub( inputString, '%b()', '' ), '^%s*(.*%S)' ) or ''
-end
-
 --- Replace obnoxious characters
 ---@param str string Input string
 ---@return string
