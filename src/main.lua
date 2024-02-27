@@ -30,7 +30,7 @@ function JumpPoints.main( frame )
                 '|[[' .. stringUtil.clean( stringUtil.removeParentheses( object.designation ) ) .. ']]\n' ..
                 '|' .. t( 'val_direction_' .. string.lower( object.tunnel.direction ) ) .. '\n' ..
                 '|' .. t( 'val_size_' .. string.lower( object.tunnel.size ) ) .. '\n' ..
-                '|[[' .. stringUtil.clean( stringUtil.removeParentheses( exitObject.designation ) ) .. ']]'
+                '|[[' .. stringUtil.clean( stringUtil.removeParentheses( exitObject.designation ) ) .. ']]\n'
         end
     end
 
