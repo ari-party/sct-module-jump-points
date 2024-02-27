@@ -1,4 +1,8 @@
-local StringUtil = {}
+local Common = require( 'Module:Common' )
+
+local StringUtil = {
+    removeParentheses = Common.removeParentheses
+}
 
 --- Remove parentheses and their content
 ---@param inputString string
