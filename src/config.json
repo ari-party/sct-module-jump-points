@@ -1,4 +1,7 @@
 {
   "%module_lang": "Set the language of the module, if set to 'null' the content language of the wiki will be used.",
-  "module_lang": null
+  "module_lang": null,
+
+  "%missing_jumppoint_category": "Category to add if the table has jump points whose pages haven't been created yet.",
+  "missing_jumppoint_category": "Systems with missing jump point pages"
 }

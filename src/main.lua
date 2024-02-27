@@ -1,8 +1,15 @@
 local JumpPoints = {}
 
+local config = mw.loadJsonData( 'Module:Jump points/config.json' )
 local Starmap = require( 'Module:Starmap' )
 local t = require( 'translate' )
 local stringUtil = require( 'utils.string' )
+
+---@param page string
+---@return boolean
+local function exists( page )
+    return not not mw.smw.ask( { page } )
+end
 
 ---@param frame table https://www.mediawiki.org/wiki/Extension:Scribunto/Lua_reference_manual#Frame_object
 function JumpPoints.main( frame )
@@ -13,6 +20,8 @@ function JumpPoints.main( frame )
 
     local children = Starmap.systemObjects( systemName )
     if not children then return t( 'error_no_data' ) end
+
+    local missingPages = false
 
     local wikitable = '{| class="wikitable"\n' ..
         '!' .. t( 'lbl_jumpgate' ) .. '\n' ..
@@ -26,6 +35,10 @@ function JumpPoints.main( frame )
             -- Make sure the exit is not the current object
             if exitObject.code == object.code then exitObject = object.tunnel.entry end
 
+            local exitLink = '[[' .. stringUtil.clean( stringUtil.removeParentheses( exitObject.designation ) ) .. ']]'
+
+            if not missingPages then missingPages = exists( exitLink ) end
+
             wikitable = wikitable .. '|-\n' ..
                 -- From this system
                 '|[[' .. stringUtil.clean( stringUtil.removeParentheses( object.designation ) ) .. ']]\n' ..
@@ -34,19 +47,22 @@ function JumpPoints.main( frame )
                 -- Size
                 '|' .. t( 'val_size_' .. string.lower( object.tunnel.size ) ) .. '\n' ..
                 -- Path to target system's gate
-                '|[[' ..
-                stringUtil.clean( stringUtil.removeParentheses( exitObject.designation ) ) ..
-                ']], ' ..
+                '|' .. exitLink .. ', ' ..
                 stringUtil.lowerFirst(
                     stringUtil.clean(
                         Starmap.pathTo( Starmap.findStructure( 'object', exitObject.code ) )
                     )
-                ) ..
-                '\n'
+                ) .. '\n'
         end
     end
 
-    return wikitable .. '|}'
+    wikitable = wikitable .. '|}'
+
+    if missingPages and config.missing_jumppoint_category then
+        wikitable = wikitable .. '[[Category:' .. config.missing_jumppoint_category .. ']]'
+    end
+
+    return wikitable
 end
 
 return JumpPoints
