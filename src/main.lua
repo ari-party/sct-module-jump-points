@@ -73,7 +73,7 @@ function JumpPoints.main( frame )
     if hasJumppoints then
         return wikitable
     else
-        return t( 'lbl_none' )
+        return mw.ustring.format( t( 'lbl_none' ), systemName )
     end
 end
 

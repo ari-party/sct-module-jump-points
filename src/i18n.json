@@ -33,7 +33,7 @@
     [
       "lbl_none",
       {
-        "en": "There are no known jump points.",
+        "en": "There are no known [[Jump point|jump points]] to or from %s.",
         "de": "Es sind keine Sprungpunkte bekannt."
       }
     ],
