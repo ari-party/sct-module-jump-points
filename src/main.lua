@@ -16,7 +16,7 @@ function JumpPoints.main( frame )
     local parent = frame:getParent()
     local args = parent.args
 
-    local systemName = args[ 1 ]
+    local systemName = args[ 1 ] or mw.ustring.gsub( mw.title.getCurrentTitle().text, ' system$', '' )
     if not systemName then return t( 'error_invalid_args' ) end
 
     local children = Starmap.systemObjects( systemName )
