@@ -23,6 +23,7 @@ function JumpPoints.main( frame )
     if not children then return t( 'error_no_data' ) end
 
     local missingPages = false
+    local hasJumppoints = false
 
     local wikitable = '{| class="wikitable"\n' ..
         '!' .. t( 'lbl_jumpgate' ) .. '\n' ..
@@ -32,6 +33,8 @@ function JumpPoints.main( frame )
 
     for _, object in ipairs( children ) do
         if object.type == 'JUMPPOINT' then
+            hasJumppoints = true
+
             local exitObject = object.tunnel.exit
             -- Make sure the exit is not the current object
             if exitObject.code == object.code then exitObject = object.tunnel.entry end
@@ -67,7 +70,11 @@ function JumpPoints.main( frame )
         wikitable = wikitable .. '[[Category:' .. config.missing_jumppoint_category .. ']]'
     end
 
-    return wikitable
+    if hasJumppoints then
+        return wikitable
+    else
+        return t( 'lbl_none' )
+    end
 end
 
 function JumpPoints.test( page )
