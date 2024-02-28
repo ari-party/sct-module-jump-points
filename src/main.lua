@@ -51,7 +51,11 @@ function JumpPoints.main( frame )
                 '|' .. exitLink .. ', ' ..
                 stringUtil.lowerFirst(
                     stringUtil.clean(
-                        Starmap.pathTo( Starmap.findStructure( 'object', exitObject.code ) )
+                        Starmap.inSystem(
+                            Starmap.findStructure( 'system',
+                                Starmap.findStructure( 'object', exitObject.code ).star_system.code
+                            )
+                        )
                     )
                 ) .. '\n'
         end
