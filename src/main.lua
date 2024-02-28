@@ -13,7 +13,8 @@ end
 
 ---@param frame table https://www.mediawiki.org/wiki/Extension:Scribunto/Lua_reference_manual#Frame_object
 function JumpPoints.main( frame )
-    local args = frame:getParent().args
+    local parent = frame:getParent()
+    local args = parent.args
 
     local systemName = args[ 1 ]
     if not systemName then return t( 'error_invalid_args' ) end
@@ -63,6 +64,16 @@ function JumpPoints.main( frame )
     end
 
     return wikitable
+end
+
+function JumpPoints.test( page )
+    JumpPoints.main( {
+        getParent = function ()
+            return {
+                args = { page }
+            }
+        end
+    } )
 end
 
 return JumpPoints

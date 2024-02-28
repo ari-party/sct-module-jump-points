@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   scribunto-bundler:
-    specifier: ^0.2.1
-    version: 0.2.1
+    specifier: ^0.2.2
+    version: 0.2.2
 
 packages:
 
@@ -15,8 +15,8 @@ packages:
     resolution: {integrity: sha512-vvSukjA2zR2eTRy/TqpIliCS9GccGPEGPgRLl+JXr3XvH2lzTwNW4jO4GAjnv+F22wK0cCiD7nZ4pX0pvHd1jg==}
     dev: false
 
-  /@robertsspaceindustries/sub@1.0.8:
-    resolution: {integrity: sha512-xXr+r4rxnq9zt2+HnWVxGZzx9x+2v0KHr3Mvu3dlI57Ygx+HYYNSbB7+bwQQwKZo472ZEbWec8W48zvK4jlJfA==}
+  /@robertsspaceindustries/sub@1.0.9:
+    resolution: {integrity: sha512-+6G3kFVudTPMx+2QtOHINv4TsgywRhQs4XwWy4Q6sY3+m8iTW6se0zjI3zRUcvO88nqdWJPvMUciAKx+gexkFg==}
     dev: false
 
   /commander@11.1.0:
@@ -39,12 +39,12 @@ packages:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
     dev: false
 
-  /scribunto-bundler@0.2.1:
-    resolution: {integrity: sha512-JDz9OYRjcJTIiJa2hOIYaY5im3W4lcDkoozUfLdfWGhXzFy0pOZViOwEv6jnFUL9OYPmn9uCjmasKSB3JjHhBw==}
+  /scribunto-bundler@0.2.2:
+    resolution: {integrity: sha512-4j1IMqZ8J52YlhsHvmBda7kL7tuzILLV6US/gdMQNcANXsNtLDppprU9yQk+SHCKMzXhJgPX4qKUSC4LjG7oDQ==}
     hasBin: true
     dependencies:
       2dec: 1.0.5
-      '@robertsspaceindustries/sub': 1.0.8
+      '@robertsspaceindustries/sub': 1.0.9
       commander: 11.1.0
       klaw: 4.1.0
       nanoid: 5.0.5

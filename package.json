@@ -4,6 +4,6 @@
     "bundle": "scribunto-bundler"
   },
   "dependencies": {
-    "scribunto-bundler": "^0.2.1"
+    "scribunto-bundler": "^0.2.2"
   }
 }
