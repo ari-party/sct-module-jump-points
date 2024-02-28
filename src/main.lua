@@ -43,9 +43,9 @@ function JumpPoints.main( frame )
                 -- From this system
                 '|[[' .. stringUtil.clean( stringUtil.removeParentheses( object.designation ) ) .. ']]\n' ..
                 -- Direction
-                '|' .. t( 'val_direction_' .. string.lower( object.tunnel.direction ) ) .. '\n' ..
+                '|' .. t( 'val_direction_' .. mw.ustring.lower( object.tunnel.direction ) ) .. '\n' ..
                 -- Size
-                '|' .. t( 'val_size_' .. string.lower( object.tunnel.size ) ) .. '\n' ..
+                '|' .. t( 'val_size_' .. mw.ustring.lower( object.tunnel.size ) ) .. '\n' ..
                 -- Path to target system's gate
                 '|' .. exitLink .. ', ' ..
                 stringUtil.lowerFirst(

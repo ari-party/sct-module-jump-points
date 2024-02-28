@@ -8,7 +8,7 @@ local StringUtil = {
 ---@param str string Input string
 ---@return string
 function StringUtil.clean( str )
-    local apostrophe = string.gsub( str, '’', '\'' )
+    local apostrophe = mw.ustring.gsub( str, '’', '\'' )
     return apostrophe
 end
 
@@ -16,7 +16,7 @@ end
 ---@param str string Input string
 ---@return string
 function StringUtil.lowerFirst( str )
-    return string.lower( string.sub( str, 1, 1 ) ) .. string.sub( str, 2 )
+    return mw.ustring.lower( mw.ustring.sub( str, 1, 1 ) ) .. mw.ustring.sub( str, 2 )
 end
 
 return StringUtil
