@@ -41,7 +41,7 @@ function JumpPoints.main( frame )
 
             local exitLink = '[[' .. stringUtil.clean( stringUtil.removeParentheses( exitObject.designation ) ) .. ']]'
 
-            if not missingPages then missingPages = exists( exitLink ) end
+            if not missingPages then missingPages = not exists( exitLink ) end
 
             wikitable = wikitable .. '|-\n' ..
                 -- From this system
@@ -78,7 +78,7 @@ function JumpPoints.main( frame )
 end
 
 function JumpPoints.test( page )
-    JumpPoints.main( {
+    return JumpPoints.main( {
         getParent = function ()
             return {
                 args = { page }
